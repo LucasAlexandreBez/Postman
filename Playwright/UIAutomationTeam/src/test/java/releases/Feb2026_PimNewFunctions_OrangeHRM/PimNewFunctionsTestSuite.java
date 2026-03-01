@@ -1,18 +1,17 @@
-package SRM.releases2026.feb.orangehrm;
+package releases.Feb2026_PimNewFunctions_OrangeHRM;
 
 import org.junit.platform.suite.api.ExcludeTags;
 import org.junit.platform.suite.api.IncludeTags;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
+
 @Suite
 @SelectClasses({
 
 })
-@IncludeTags("Regression")
-@ExcludeTags("Smoke")
-public class OrangeHRMTestSuite {
+@IncludeTags({"E2E", "API"})
+@ExcludeTags({"Smoke"})
+public class PimNewFunctionsTestSuite {
 
 }
-//app.orangehrm.username=QAAutomationTeam
-//app.orangehrm.pwd=Orangehrm@123

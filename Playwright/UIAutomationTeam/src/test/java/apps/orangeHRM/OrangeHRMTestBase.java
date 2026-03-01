@@ -16,6 +16,7 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.HarMode;
 import com.microsoft.playwright.options.WaitUntilState;
 
+import apps.orangeHRM.page.LoginPage;
 import engine.PlaywrightThreadManager;
 import engine.TestBaseManager;
 import engine.devices.DesktopContext;
@@ -36,6 +37,10 @@ public class OrangeHRMTestBase extends TestBaseManager{
 
 	protected BrowserContext context;
     protected Page page;
+    
+    LoginPage loginPage = new LoginPage();
+    private String username = PropertiesConfigLoader.getPropertyValue("app.orangehrm.username");
+    private String password = PropertiesConfigLoader.getPropertyValue("app.orangehrm.pwd");
    
     @BeforeEach
     public void setupTest() {
@@ -59,5 +64,6 @@ public class OrangeHRMTestBase extends TestBaseManager{
         	    new Page.NavigateOptions()
         	        .setWaitUntil(WaitUntilState.DOMCONTENTLOADED)
         	);
+        loginPage.fillTheLoginFormAccessOrangeHRM(page, username, password);
     }
 }
